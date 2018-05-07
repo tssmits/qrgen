@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>qrgen</title>
+    <style type="text/css">
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 210mm;
+        /* height: 297mm; */
+        background: #eee;
+        padding: 10mm;
+        padding-right: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+      }
+
+      .parcel {
+        height: 40mm;
+        width: 90mm;
+        position: relative;
+        float: left;
+        /* background: #eee; */
+        margin-bottom: 10mm;
+        margin-right: 10mm;
+        border: 1mm solid #ddd;
+        overflow: hidden;
+      }
+
+      .qrcode {
+        position: relative;
+        height: 100%;
+        float: left;
+      }
+
+      .qrcode img {
+        position: relative;
+        height: 38mm;
+      }
+
+      .next {
+        position: relative;
+        float: right;
+        height: 100%;
+        width: 50mm;
+        padding: 2mm;
+        font-size: 14pt;
+        font-family: monospace;
+      }
+
+      .album {
+        font-weight: bold;
+      }
+
+      .year {
+        color: #999;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 2mm;
+        line-height: 1em;
+      }
+
+      .artist, .album {
+        margin-bottom: 6pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <% @qrcodes.each do |qrcode| %>
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,<%= Base64.strict_encode64(RQRCode::QRCode.new(qrcode['msg']).as_png(size: 300).to_blob) %>">
+          </div>
+          <div class="next">
+            <div class="artist"><%= qrcode['artist'] %></div>
+            <div class="album"><%= qrcode['album'] %></div>
+            <div class="year"><%= qrcode['year'] %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

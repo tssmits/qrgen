@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>qrgen</title>
+    <style type="text/css">
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 210mm;
+        /* height: 297mm; */
+        background: #eee;
+        padding: 10mm;
+        padding-right: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+      }
+
+      .parcel {
+        height: 40mm;
+        width: 90mm;
+        position: relative;
+        float: left;
+        /* background: #eee; */
+        margin-bottom: 10mm;
+        margin-right: 10mm;
+        border: 1mm solid #ddd;
+        overflow: hidden;
+      }
+
+      .qrcode {
+        position: relative;
+        height: 100%;
+        float: left;
+      }
+
+      .qrcode img {
+        position: relative;
+        height: 38mm;
+      }
+
+      .next {
+        position: relative;
+        float: right;
+        height: 100%;
+        width: 50mm;
+        padding: 2mm;
+        font-size: 14pt;
+        font-family: monospace;
+      }
+
+      .album {
+        font-weight: bold;
+      }
+
+      .year {
+        color: #999;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 2mm;
+        line-height: 1em;
+      }
+
+      .artist, .album {
+        margin-bottom: 6pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAB/0lEQVR4nO2ZW47DIAxFSTcGO4uyM9jR7IDx9QU6/WgmX7VTOa3SBB2pYPntR79y/TzSpSuwwAIL7KuxtulVGu/yyy9XbffmGssIJVV+apb7sfdjr2vVeG+usaZ61Upqe237Ic8iwLFqvTf/GDRNxCZKl6vI8DN/+gUYlK0MRYOhfuRPb41ldWT50GggkSF3tdXp3u5wBAuMgTQNE4UAy3PVeG+OsczarCY11aQB4mXV/xHsMMnYqGZIRZCItMKPg725xSAfSE3iqFom1G5J0XhvjjFN2eQGadVEMb4kIv6PYIKpaskNWQjVDKJD2cCXGxzBAhPVykx4VXRUO42rNYV/e48NTyZC26eg9Glb6a/7I1hhbYNJMjTgPc96K+LCGaZm2jvMdKVwULwWfaRzDPJCJOh1KZ12lahutzjC5zGVGIWEpqU6OWjgVsJO/8Hg31DQI5AeW2EijOI+4ukJpmqVWVmxa8lidYrtBkcwwnSoQHmhe9Q4ZRBXF3b6HhN1Y+tDEzmoWK6zJVeN9+YZm5OrUSKwgZn+Fqjuj2CDjcnVCKUMr1pkRX16jjG/zbRMKVBHwzzq04sYggOtVX3esUVcuITNvqUa6Zqe+tibR2xMrmatUJn29tn0vcMRLLA1udKErTGYsrIPO32PrckVnBr8GvO5GvPTwAILLLBx/QJAcGczTWkergAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Ambrosia</div>
+            <div class="album">Ambrosia</div>
+            <div class="year">1975</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACDklEQVR4nO1ZQW7DMAxL+jH7Z4Z/Zv+oP8hEyk5yadfLKnlQ2q1BSqCSQIui/Tg+uZ6P7aMrYAELWMD+NazvvLLcZb5we3u6QAo2sAQpaVK1VIt8yJ/cz6fGsbmG9cGrLdWcjiqMY+3m0xVSsIX1UvecGmr3vR9dHiaLk4sUK7Z960dXhqXZyDbhWkPtpIS3pwukYAHrQzhFFqS35fFdP+V0gRQsYEm9WUPZVE9FHs6ntrH5hqGxCblQNqma3Mq/HHz7DUYxgBKkKhVLB/mmPFRd9Z+CDQyTGtWgoFDa4aZvsI7NL2x4A1Cra9VkDhm9TecR9ymYwDB7sFYVRuuQd2O7yyBito3NM4wMoxRsWiksWRZzziTuU7CBceyoRe1VgpRmKkMKX/8WpnoKOy99bVBtiEW2js0zDOOH+HnhF7hW4BogCJdH9Z+CBQz7H1olziG96CxC2oWevob1nQ1NZbQc1Af6ey2haWyeYTQI+9zp5SwHKcWCbcG31zDOaokblvOI4fowjs0zTL2BDCHDxmtvI+lIwAVSMIFdJ1e6aymWa79cqm1srmHXyRUUdNBO90eUcP5TsIHpydV5GsM+t/OAppnHtgJMy4SRhAzssW/5CYxbvJlutc+1Gv3tHUwNfJqHprOtcbSzjs0x7DzPUnXQvRAtYvDtNex+ckWCwUC0y7UukELAAhawgP0t7AdcGF8z18S3JQAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Polvo</div>
+            <div class="album">Cor-Crane Secret</div>
+            <div class="year">1992</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAC0UlEQVR4nO1ZUa6jMAy0oRL9S28ANwk3S3IzuAncoPwVqeAdJ7z9flo9rbsLSG0EHalDZI/HcSXfuZ4Vfeu6YBfsgl2w/xo2sl7dyNV2X7hPfKOFOeanHG252cCClgiscsPXGPftTuQja+UYrLnZwJiPLVjaiUL9JjeNkTaEjT03O9gY5dYgUJI0r6Xz8ZO42cACPosfSFOmHf7Sn34mTOSly07kxj7wWxeiWmSy52YBS6gmD6z1etcIqTRQUhQtMr01NwuYz53IBNWoF90XaVRbqTQo0ZabEQz1dukobTfNlbTrI68R8pjP6UNS/V5biEdFqDKovsicbox1MSfG3ExgYadmhmpATSEegn1BArH+chSbz3+FH4aJ5kpg4buDlGzNAiMvMGaPuTfnZgAbY6WmdBQ4VWxBqjan/ow0gay5GcHgQ9yEFc0dUobqfJeVthjWf+AVfhLmGaoxdzBm2Ak4MnkTzUGOImzLzQQ2yqbigSRRzy6Rbyt36lubk3a72uaWdq5GoUWPt96dpAjfas/NCrZxOxVt5T7pgzkwEohOWmVY9dMPoSRJkEaeakC27M9suZnAvFS5sU1UYgK+VYtwpcXmlFUG3S7MOgd0L3oQotrqslNdH22KxtxMYMiVtZUkGhrchyNQ9lKLjblZwFRDmhlVRppX7l42N0NRKuzSZM3NBObR2C5t6fu1pdnzTpRTAGtuJjAYM42QMeYTMzS9CBTYEWanhwG23ExgXvt+p6a0nKLKu3nOfcgOvjfmZgI7Jnc+lqMyPUt9QErw29JZc7OB/Z7coeyi/d/rfKeKMplzs4HlyR1pvdWY0IOzjvKI95xO9bjQy6gVG0I2Zjq2gjkZPoObCQwFZXMCQaF60YHMfl4N+Zrc5ZRRUXU6pamPYY0xNwvYMblL5Rkc2co+8XY7a9k9JnekzgN2JHAODYG2nnYMccEu2AW7YH8E+wWSlpYzVMPbXQAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Polvo</div>
+            <div class="album">Today's Active Lifestyles</div>
+            <div class="year">1993</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACCklEQVR4nO2ZW24DMQhFx9kY3pnlndk76g6mcDEzf9P8JOAKR+rDOlIw4s3rfOf8vI63TmKJJZbYv8ZmwamTP4de1PvWV7bQGEkqGQcNGoeojn/dt86yhcYm7IrtrZQ29KLarbds8TExM7E4UZ6a3Be+9B9g7KLU2cTo7BbpPv+lW2OEQEa99SY6K03/t/C2wxM8sKmJc7LaepX0AHubVzrd4AkeGGlvNlRxEtvwsVtX2cJjnEHphKVJJSfWV+dV0e3xhG9j8EkNbFVtTS4bnFXzavgnuGBaf0yu3NjcoDD8Ia46vGULjcEt24DGkFWlFhnzLkbiP8ELU53hsK2h+l0//WULi0nqRCbVGkRsTVoGDnDadW3wBBdMGlPWUWdlad1WJdyJHjMvPGHIAifc085KCSvCxX+CBzahsCmViNgXey1iHXX4qq9s0TFUbeivoKpZlutqgNviCd/HJAtMm7XJWdWvliS+skXGCB7aS9HGHuWc5oaReeERI41k90REC7ie+4UHzNYJw9ortA0nV3Et5yEPmG2u2DFXZoXtWVPvKltojGz8xhWIjJOWsx7Zn/6B6eZq2ZsUINY1BJBtA0xbLYyVMOu91jMBZIuNIbxV+UuC3urqg8gWELs3V2SzN0wtZ9a9T5htrlD6olEYh65Scx7ygN2bq8vuNMZdW/vwT0gsscQS+yz2CwdpWDNGf39SAAAAAElFTkSuQmCC">
+          </div>
+          <div class="next">
+            <div class="artist">Polvo</div>
+            <div class="album">Exploded Drawing</div>
+            <div class="year">1996</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACBUlEQVR4nO2Zwa2DMAyG7VIpvdEN6CawGWSzsknZAG5EgubZDvT6KhEVmpoLafRVWJHl/L998u88/QneehRTTDHFFIuNOQzPlRdg8Tbg2S97551jSwHL5J57gJnQIy3ykTZlb9w9thQwztWK3tks2UvnTD8s5fMBYksHc2fKXX/v1prwkY/+DmYc/bY1HfH0uY/+ACZJuywbWLKXjrk/QGzfj80iEm7gzIy+AZCrTfYuu8f2/ZhZLTIrB94Y8gmXvWnn2JLAPIpOcLj+beZFS/msunczxoKBXkUP2ZNrb9E7shUAZavFIQJm2K2RHgsqt75T7SWjQed8gNgSwLgC+Kak2kvn7NlfiEKjfFbXFgETL4zVqsfEVvjQfMj1aouD1feCdAKdc9OWPZti6ULo1bYdY7lLr+7qzJNdW1uMGS+qA8SWAGZc5ukwiy6fPNmK9gbs45B9nNHisBnjpPXeYjGy3KUq0YfGbwX5oMVhMxZSlJSDCGBbkULjDnBD5UKzdzv2mlYY/xTdO1zYx0FbdjqtiICt04pwzjUPKULz4QCxpYC9phVLTZAeWlM+9GqLiRlSDlwcpIcmLZ3jxJYA5lAUGgyIJ7bJbaHKIQa2TCv4akNvyzCkqG3ZqSmOgK3TCmn8ApVcHhlL7VVTvB17TSskjRuAnJsPy2Ln2BRTTDHFFPvn+QOZ2iQzGfttpAAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Polvo</div>
+            <div class="album">Shapes</div>
+            <div class="year">1997</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACAUlEQVR4nO1ZQY7DMAh0+jH8s8g/wz/aH3RhwN5cWvVUyIpIq22tkYoRMDPk8fzk+Xm0j56CFaxgBfvXsHng6W325n/z6Ps0NLbUMFIq4TZPRr66nPA+DY4tNWxaXUnKyDLoX63abnGFaBh6VGqNv/mjt4cRo0P5qz96Xxj5IKMhTHA+h1HEOr3FFSJg04mTxqn1JvxwPY2NLTGMzJvxThv+r9PY2HLDpCunFde0Nm1LwPXw2PLCJiSvUoLpD5Cp8QNpDm9whTiYZAhzTZIHJaJajpPElhQmk8wm2hDZq2kT34BPB+ZdaGyZYTLdUG3Wk8oMHS1Lyzjkv0IMTA2VNqlmS/WbFh1dFMkNrhABUx4wTiBGuWl/avFR6d63sCnaQ6rsOWwVQlAi6h16fGyZYVpc0G/KEH0tR7RH1W7FxpYeRmsHB6vAqDtuxaevYeoN1CWoazgHtJuR6ebY9FcIgdnew5jABZuq3z+7kP8KIbDpxpRtw4s3DG5Pz/L1r2Eyx2yYgQW85KwIS/e+ge03V0hg832vJzE4ttSw/eYKlp6GbUXYFpnBsaWGTV/39mZ1RuycWnukj2BmSvuqwL1LyhBbXph0aV/7S/MM3rIJYssJcwVnrr7jgCFHSoe8g+33WWIadKada1G+DGr+K0TALm+uTMrhE6MKa74VrGAFK5g8v/M1WjNtqWbwAAAAAElFTkSuQmCC">
+          </div>
+          <div class="next">
+            <div class="artist">Polvo</div>
+            <div class="album">Siberia</div>
+            <div class="year">2013</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACBUlEQVR4nO2ZXY6DMAyEoRdzboa4WXKjvQHrGZu0L8v2ZWuzMq3UEn0STjT493G8c309lreuwgorrLB/jY2VV8PfNtb5nav5txCDCUJJ1/NrenDSF//aarBtqbFBXcnRRT+43fpcjbbtBtho0JlKzmX2kYf+A0x2ejT9aXqEH3ronTGhI6PQ+KbK3uZqtG2JsfEMp7zddvi3uXqHLURgYrVZx4E13FN0czXUtuwYxLV11dvwUIoU7hTgPbbweQyno/JSscGlDcaGbpGVArzBFuIwRoXBSCqWBD9jarRtOTEtrqAvSEsgOj8zZsAt2LbUmJ4W3NtOD8ekl5UWa60ebFtmTOuqWYpq0rv5ySG8muDybyEEYwgYLBSYuLWFAdbSuGDbMmNwZrtKjuck9usOL9y2zJh067dtpjv2RtgYSWBbaswrBKhsbGcKZ76uR9uWF2Mh7zHAcjiGUZSpR+W9VxgalXwvWWghtFrLN4NteTHrj0NtKjH+t/rU/FysbZkxGyTgDUXhYFHVmm+j+kgX2MvkCo4N7d7lLPbLv11g5+TK6vnVosHp74JtS4355MpeS+l0ddZMqvr0d4zNNxXbahGVDq4lsS01xubRYNv3TEKqrr/CfHJlA8DR/ADn2PkOW4jAXiZXs/Pmg4bK337GnpMrpiGHlQ4MCv66pt9CYYUVVtjfYt9oRVkzchDi7AAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Pearl Jam</div>
+            <div class="album">Yield</div>
+            <div class="year">1998</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACBUlEQVR4nO2ZUY7DMAhEk17Mvpnlm5kb7Q2ynsFk96dKvgqpyFbZJnpSMcIw4Ndx5/p5bbeuxBJLLLGvxmTnVaVuUmWveFPPt762hcYKSsnYyvz0Ou/4dr51ti00JrtFGR7qusmKtkcswRFjpB299dNfH/jRL8Ckdc1xZehO/cSPPhorTGRlrLw2zgQ3/G0LjIkWTqlMbZrbqr11ti0wVrQ3G3OjDo053M+3rraFx2YxnR77F3n2F8C2qBjUbkNkzZLAf23eppSzjPeAJXhgiKkyxcf03QHdW4ZW1fngbltoDKHF6jnDbmysqIg73aPOtgXG2FzBd+YoYbcKH0r2p1cYdid3qMbb4DZd8tfbtpiYtKPvOgiB9xoc2Jdyy7rwHoOTVLH1ZiORwlxnGzf8ErwwlNM2qD9E05p2W8txT1jC5zHs04ZqSsHLcUhBhy/nWCT8EnwwQXbbKX2n77SdFzyZhIu/BBdsNaOa5qBHWrfKkHXhCluaF/u0LS1XrGHwti0mtmYgByNt9VhjDd+yr3+P2ckVtBuViDUPnCv52hYaKzZ+w+HCrAfar44QtoXG9ORKFS/Uh07iEIDZn97CUByo3SzB5T69gcFZdBuV3L6n7r3A7OSKc3GWV4wtD9SJ6m1bYMxOrv6Os7g/KeGGs22BsfPkinM3np/SYXl+mlhiiSW2rl+P1lwzluR7VAAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Pearl Jam</div>
+            <div class="album">Binaural</div>
+            <div class="year">2000</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACyElEQVR4nO1ZQa6rMAy0Aand0RvQm9CbkdwMbgI3KLsiQfzHDm//9BY1+sCmDRqpU8sZj+1CfvO8C/rVc8Eu2AW7YP81bGB9nhTt8xWLTU9kJw6+3HxgnZYIfMpK9UhdKkVGBEQrR+/NzQfGfEeiBK6ImsjIkAdOlBPFm5srrPzMz1bk9vnmjx4W1oZEtzdSIxHN3IUjcfs2TMRygleiqcOVudcSA2Up8ebmAdPyAtUQRAIaIrzepieiZDXHm5sHrLVOZGzDVqHKtEiNTz10ITcowZebE0z4PsOAsMz8tFN+vejJm5sHLEI8oBqCE3yISsnc9kRb/fbn5gQrLTU0BNNLT83woqL8qDlx5/Z92CDCtSAEUumJN67fTVRFIQ2PKzcfWCxFHZkZECgsryYe5XLXC+TMzQXWQUb1v5cyq2fXl7Ajeo9USny5+cCSevbBnCoiscG6Nz0luBLYV29uDjD8aXhTGBDWRBnUmKlFLTQ8L2duTrAClgO3gyElrbC5Eg5SLQ8kijc3B9jA6GVqVJkNjmyyelvDo1Ju9Xy5OcFwO6Y2hqI0UYV4wLdSouVxAG4eMFQZbkbTz1p6y5CRIloaFJvgzM0HJuhv0cukbNa1vDR9h7QRnQI4c/OCobwEM+v6LHpzeLmrWzsAt+/D5Ga9jKrG9OrgW+2uQFGmc07dVVThPDrYEbS5cZ8kai/TnHMeEpNFAtbdqm+eh0SdJI6nLLvqxayubBWqr4RyVUfWyUon1ZCfzR2uDDcD466YZ1fr7s7NB5Y3d+hl8vC9yLPDlIuNMzcf2L65E50M9V2yd5Grm06NvLk5wiLlDVVRyhvlxZY1p9SQ/WlNTVVRdF/F8rPiPQK3b8P2zZ0aEKRGQiQaYfUhB+DmAcubO0L3AqfKtuyGRcUXLcLO3Dxg++ZOJ4m2q9OJmc1D6KxD5gt2wS7YBfsb7B8OV5MzOd3j8QAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Tom Waits</div>
+            <div class="album">Heartattack & Vine</div>
+            <div class="year">1980</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACzUlEQVR4nO1ZUY6rMAx0ChL80RvATdKbJbkZ3ARuAH8gAX7jhP1fraqaPuBjI7IjdYjs8dh58G+e8UG/em7YDbthN+y/hnVGngZLvshCWzk1RHHXeF1uOjAnJYIs71vFvWwsT/wxUjlabW46MGNKBIo3PMlJcDHLG20IG31uejDr2VTj8CKkTNVbfyZuKjBoCM9xM+OhQYR84kdPCmM5CcvQ0KcEyrrIQhknRfmKT3grLMSTgIasxWADP7ZqxJucj3lpc9OA2diJ9BT2bKq7F+1ZzJzUoHhdbmowGBCR0WJEvBybD7EjSUq+4hPeCAsmL7iPSYKy63b4kMF5WSgVm/N/wlthHePbIRdONKRBruTFWIcLi6o12YoIsR5vFaQEjkykhK9r3Uk0xLYB62RbR0lUM55xPCfgpgITDWFUGYiHOcJmy2Xx+tw0YFJQLLpdii3NSlS3LlvPwU0FBgOCCDFLFfvbLbY0bEokkD63z8OQK3ECEriYTIONbJ5sMDvyqLukqKK8xArreCmr7uUYmQMfgrAx14wQhEZqW2BABsto7uLuhTXEsVRY2JFUaI0pf+qtPjcdmDHV0BBFz24gHrAjgTdTcX/JstuhbaGKg0dLMzTkMpkkWo+UkVmzLjclWLai20XmrEuNhh/1lgbjZQogA0Vlbkqw1MtEAxJg2sc4YS3hz07A7fOwaEDMSwZETxJ/ViKB4OAXuDWvzE0DZpnR7UJD4uwQoVFIriCBivGaKXPc3OFcillmZPsmcyL87xijfcEnvBmWbu5wLhDVPk5HRpIijB4veGVuOrB4c2c5vbgtX551G9D7Vh0cvDI3TdgmdUViohgaIr6udT+eEG/uxJEhc8gdpu0c3D4M43SHGTNHivAs3e6Ww8Ff814m3dylJEGh3Td0Nl2cPHcvbW4asJ+bOycWtW4dMqfChlj3izrVG3bDbtgN+xvsHydUkTMZKQtIAAAAAElFTkSuQmCC">
+          </div>
+          <div class="next">
+            <div class="artist">Tom Waits</div>
+            <div class="album">Swordfishtrombones</div>
+            <div class="year">1983</div>
+          </div>
+        </div>
+      
+    </div>
+  </body>
+</html>
