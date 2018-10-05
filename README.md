@@ -2,7 +2,7 @@
 
 Generate printable sheet of QR codes with album titles.
 
-<img src="images/readme-qr-example.png" alt="readme qr example" width="250">
+<img src="images/sheet-example.png" alt="qr sheet example" width="250">
 
 ## Prerequisites
 
