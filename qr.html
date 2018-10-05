@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>qrgen</title>
+    <style type="text/css">
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 210mm;
+        /* height: 297mm; */
+        background: #eee;
+        padding: 10mm;
+        padding-right: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+      }
+
+      .parcel {
+        height: 40mm;
+        width: 90mm;
+        position: relative;
+        float: left;
+        /* background: #eee; */
+        margin-bottom: 10mm;
+        margin-right: 10mm;
+        border: 1mm solid #ddd;
+        overflow: hidden;
+      }
+
+      .qrcode {
+        position: relative;
+        height: 100%;
+        float: left;
+      }
+
+      .qrcode img {
+        position: relative;
+        height: 38mm;
+      }
+
+      .next {
+        position: relative;
+        float: right;
+        height: 100%;
+        width: 50mm;
+        padding: 2mm;
+        font-size: 14pt;
+        font-family: monospace;
+      }
+
+      .album {
+        font-weight: bold;
+      }
+
+      .year {
+        color: #999;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 2mm;
+        line-height: 1em;
+      }
+
+      .artist, .album {
+        margin-bottom: 6pt;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAB/UlEQVR4nO2ZTQ6DIBCFQZvgTm+AN7E3s96s3ERuoDtNbOnMgK6baCrSYVOlX+JoXt78kLlv1pCJrxZjjDHGGGNHY7P0q5plJvzFzYW928mxpYDllOd6oRYn8X4sFyFobzo9thQw1Oo9bLVP0DOKtgMZRxBbOtisQLAPoYdfPvR/MDWD9z4ao93yu4f+ASZBtU+8cBJ8ohnIHFpoOyKI7frYi4qEGszhDXeNIculveL02K6PqbVFVugJbdfYgvSMazk5tiQwqMe6UPeKru3JhIUwtS8hLvEK8WKzzJ2kgiF/Q2ozdTnhBweXkCWrdz+Wo+UKW3nRCisLaDTkluOu8AoRY9SstU89+NQmRDlFE1sCGFoudBO2wgrN70MtAYVZf35sCWBYOcCPtgV8VSyAR6zHHJiwUOy9uzGcj8GP1ROltgYnOSDjrjUVe+9+TM2hcgipDdWLH9w0XPcegM3qBb3w3UrpU5vVI4gWZNyPPO/dj6kFrKBdp7vdHdSb0+jMalbvfmw7rUCXwHlvaCtMzeo9AltPKzDHgWhxUYWmB64cjsDW0wqqHEKFht4bQ2zpYGQO2B2jnmmkE09sCWChKV49oTFUQsQR25WxcFrhv6rZTjC15YnZAdh6WiFeGc17y1HSH5a7tgOw7bQCUxvIGMzB+Qvu2hhjjDHGosc+EiobM8wRPVsAAAAASUVORK5CYII=">
+          </div>
+          <div class="next">
+            <div class="artist">UFO</div>
+            <div class="album">Flying - One Hour Space Rock</div>
+            <div class="year">1971</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAABiElEQVR4nO2ZMZKDMAxFMSmcLkeAm+RoxkfLTcwNlg4Xi1aSbcjsbJFmDQzfBQPOm7GBfOlLtPTJ+GqbjwYwYMCAAQN2ECyaPPqoh7bxeaLdfW8XwkwyEkNjF76SQ6cT8wH2diXMr/97loacqSr+eVFgf2PxRhRqLwrs17X9NjksVVwUWDlxRPrsDQ2jxiZLb6o4xS2cHqPkiAZJCf4pOXnUifsB9nYZzJZuSyjByOWJZfe9XQrza6ngAktjaPQQUS/Uw6IEIxHE67GwZ70b0mDkewst1MP4YbtQCgQORmyUuulW8vS+e7sOxlWC6TU5TG2TiwbxrB3yQmVsvFMyRX51Ru4FLVTEJCLRLM2kmQyFkpj9E1qoiG09VastPeIAJfPIC1WxtaeqCpjYMo0PvkReqIyVniqlF5DCErSwD6bdo7gZJWhhD0xegMShlJi7CVqoiuWeKlcJbFfZKKlJHdHNq4mtPVUeXEVzEZe0gC+eFbGtpyrfFyQiuZB+QF4ABgwYMGAnw34AX8/yJM2zQD0AAAAASUVORK5CYII=">
+          </div>
+          <div class="next">
+            <div class="artist">UFO</div>
+            <div class="album">UFO1</div>
+            <div class="year">1970</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACCElEQVR4nO2ZbW7DIAyGSS8GN0PczNxoN8js1zjJr66/ajM501bCHqnG8jev85Pn51U+ehJLLLHE/jU2DzytzDb5DxaPXVfZQmNVUgnx5+ijscZaJdac7frKFhqbalewt1IJ9nbtOsu2Dcbag9l99Ut3xsQ/xWmJP2T1lS/dGqsa3s7RKltaHYc6rIW3HY7ggU1Lp5oZZheLs11n2QJjVXszKmUlBPZS/rl34x/BCUPNxs7ZoSauQnitvuovW1yM88FJ7JwwtykaW6tiBhj+CE4Y+gPNpvI7RJH6j07esgXGWDtwUal4O0IbZ9RiuvOVLTAGNc2DTYvTKUl0OzoywhXjwh/BBxNjk+JN9cRv52pTs357i0lAg2dSUadt6E0zn/6BSQ6FkVUteDXGcY5tq92KfwQXTErcgY5BEsSQEgT9lg1GNjiCDzaRPhHhuvb08FY1P2fZ4mKSAJAUVE+qq1X46kv4I7hg6Ks0nmEWUqDK0cV3c07+BsNgXFQkiZV06rv6LXfZImMyqjytaNN3Hb7Z9DL+ETywx80VB7pOc7mq9awbHMEHWzdX6LekcsNwpNI98I1/BB/M7rN0+nFtXRFugyM4YiudLm1V7VmDyBYes7usis6hquKCyBYOW/dZZNsyT8Ii55bvMLu50lusftcj5C9bYOx5cyWWh8im7pr9aWKJJZaYPL9NyVgztaC2vwAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Kyuss</div>
+            <div class="album">Blues For The Red Sun</div>
+            <div class="year">1992</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACGklEQVR4nO2ab07GMAjGOy8GN1t2s3Ijb1DhoWx+Ud8vCjWdmVmaXyIQ/te38crz/tZeeja2sY1t7F9jcuBhfHET1p+Dn9MFVMjByEpJV7Od+lu40WUfcZorW2lMpl/JcV5M3T74OV1ChUyM4F5qrjMc7Q/+6PoYnIwsQLsG6x/90aUxgn+pvcjC1IxmL91et4AKGZh44bRCasWh443TZNkKY+Sz2TQXdTfgfZoqW23MMpu+dFk9FUbAHvwkuQVUSMC0++j2Irmps1mG01bOLNjcduVVSMFooBpYkHp20z7EDDmG+l/Pla0yhghFu4thoUcfIn6WKltpDK2HeGLzyZStB0G8crJshTHyWbS3CFYaUVO7e1x5FVIwQRZDPTgv/dSgtVOO/ncBFVIwqwstyoImugulFdFLu3/7GrMtyIGVG5MnNZsTok7kylYZs/xmKQ5bN39gP23hToRsfRVSMA1Rs9EBI8mJSvp0JbmyVcZQDxhZrmFFbgaTPWf9iKnDoQh0P5S5S5p7zFzZKmMw2PQ6i1BU0zG6O1+ubIWx5+ZqjltmwObd285v32Dz5opijHen+7Qwr69CDjZvrnw8vW9nWKYdV1AhEfPJHgtL7Ht7zKsFZKuN2ZYXdcGaOLlH1RKyVcTmfRZMNed5XDxjzE+WrTAWN1fiA32LtVs0dAuokIHdN1dmJ4p/PcSoNS1XXoWNbWxjG/td7AOdhnczUavWjAAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Kyuss</div>
+            <div class="album">Welcome To Sky Valley</div>
+            <div class="year">1994</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACDElEQVR4nO1ZQY7EIAxr92PhZxU/Iz/aH7CxA505VXOawCpI7bSVpQkoiW346Z+M35/jo5GwhCUsYf8apidHObTg0W7l/WtobEvDBFTS7BdXb9JrefsaG9vSMD1Hil29qWfe62twbBvALNHOYkmnuH3rT/eHoa8JVq57oX7lT7eGibe3cZv1KbO97TCFCJjedHpVu5o0sYTTm043mEIETNybWV+7mr0aJzix9ptQl59CEAydzS5x/UFisD5HUg2PbWWYNFCoVCvTw+96q+Do2NaFuWI7r4rOZmmnl/EpSAIauMXGtjQMxEkypfA9XL/peAyObW0Ya5J8ADo1KXI5pZIo9phCBEwL2bOeFxcOSWap1+ay7TCFCBjXR2e6odMVlKqpudRvDzCzpcgtLBZWkK9gWLS41G9PMFNrzqaeewLHwBUbEm6DKYTAmFtNR1W6bPMG5wZ/gykEwJBUvoXUhwoZFMHEi41tZZgXJYsUXgt7lwUFW4umX3iCwSPQJUCCWK9za8o0bNGxrQyjnxLvZr7XixTsLev0EfZ2nnW4Le3u7CX12yNsnFy5jWfRivc7qrjY2JaG3Tvj1TNOy9gkSX/6AUzBDuSEuX5z4eJjWx7G3V4+0Tmk7n2CjfOsOg5PTZA4NcB8Rce2MOw+ucIeOf0WtVud20gbTCECdp9c0c83eb2k7k1YwhKWMI4/fmRyM+Kn1zsAAAAASUVORK5CYII=">
+          </div>
+          <div class="next">
+            <div class="artist">Motorpsycho</div>
+            <div class="album">The Death Defying Unicorn</div>
+            <div class="year">2012</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAAB80lEQVR4nO2ZQY6DMAxFnVIJdnADehPmZsDN4CblBrADqdTjb6CaZaWJSqDOggb6JEJk/fyfXPid1l/orWaYYYYZZphvbHJLy4jYuUr/4PXZdeexnQGLdJ27E83Sq9obTTKr+mzcfWxnwFCrP6SzKq3L9KfWet59bCfCotlRXXL/0Zd+DRY/cG1vQ/LBl34B5kRmm7VbUZcz5rnkVxkf4BMCxmY1CeuKVhV37eizZPexHR+Lt4gcTxFL9eb9Us9oj53HdhJMnEPnkuhJMGar9rbmHLxhZZP3k8N90WYqF1CJMMZ2cEwmk7GijTBmZUPpiKAhTngw7f0/pmmi/sm7dFFa0V6t3hDGdhasbBDWHJa2zmGeYdVSC8UeMJECqdaCB7niXsThCQOcd7al4wGD9nIjRcviHJyoBCRX1HjLcQf4hJAxrdWCeZwjprK+pcM1mLGdAXPwCV02XZf93iGZL3DCtM3zAT4hXEwVAL6XNFbQaswqixVesD+nFRrfYHdZ1zjTXh/YdlqBPQfkC3VoEt/u2wZ7+J8QNPY6reA1tS2xIu+ter1iiBVStNhDI5wKWfV6xGLxvYRQDDVGarM9By/YdlqBfAGV0DJGx8TBA7adVuiKVm5FK/nCljYP2Ou0Ar4XLWWkY+Q4O60wzDDDDAsd+wVO3g8zjCAC3gAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">VA</div>
+            <div class="album">SOMEWHERE</div>
+            <div class="year">2015</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACAklEQVR4nO2aUW7EIAxEYS9Gboa4mbnR3iBlxsCmP+l+xVA5UqMEPWmx5dhj3Nf5zfV+ha8uxxxzzLF/jdXI6wj1qPHADW9z1XRvS2MJpURCzSWfknC7rBrvbWmsMq6S8CFJbX9z1XpvW2BJmtdilkDHPfSj+2OMOOa547kf3RhLTGR0V8KTRlsa6W0HEyywOgsnXjJKQzmuq+ubYIEl7c2EKwg5QbxdV5c3wQxDcLVyQK9VZDgmutDz3BYmPI7BQ5rLejktkRIOOkQdt7wJJlg6C7oENAvjE5WgTuxyZHkTTLAmc0tWFzXnZZkVAc/Ge1sag+Oaw/ht0lUIuK5FxHhvC2PdQ0V7LX6xaLbaV1tch9xgvX6qAEEhYLhBgyDz2e5tZYxuKvlkeYDDStRKOrut5U0wwRhpvLc+AZ0CX9Hc+3f6B1ap2FBNm+PiCLrere5hwvPYOGxrhWA08oFarsWc6947jB8lFVylkEM9haZzHXKH8aBSJS/7UipfqhHvT++wKTsupVXQsOp5kuneVsY+kytOFFptGKGW1G3rm2CDfSZXWgumFjk8v91ifXLV5wqsCHPJem/rY5rjWB/SyHgeb19g2mWdUuewwePtFpuTKz1549mlXKaBG5hggY1zyiZ2IUAkdOkb+uB+AxMssF/zrKQ5Tceo/v8hjjnmmGO8fgBYC2Ez8zdcgAAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">At The Drive In</div>
+            <div class="album">Relationship Of Command</div>
+            <div class="year">2000</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACAklEQVR4nO2ZbW7DMAiGk14M3yzyzfCNdoOOF3DaP83yq+CJTO0c65GKEZ/m8bzz/Dy2W09hhRVW2L/Gxq5Pk1V7vbx2FzhCDEZIJaxqw5rl09u5GytbamyYtR2iLlke/L4bLdsC2Nib6I7fFPaFH10fI8ZnqLlh/ZUfXRojD2SiNbM0VdvcXeIIEdjwDHr0g0VjsLiZWVu0bIkxst6MSbICFCd/UKDvxsqWHENG2Bu8c2AhX812E8iWFhuo1TqKEPwTU5NXhtaOim9XGHWNbmpum5qarLu2DC1attSY9QhsCnuy9Q3IEMTqrwscIQ6zEKeakzZL0ytnkS0nhoIDmXQWuxrvGH2XdKnBsqXG4KMHEgOqj67pFMlVXTVatsQYeisJcB7LTFdSy2m6sLf0RwjBpOBg+Kp8u6F1d9uytz8wMThENK9ENkukY9a/SxwhBLOulJAHTFNwVMsO4bKlxqzSJW1ItTtF2zBr4TWOEINZ7WYjBqk/vE3dyk8/Y3BH8qsPBDoMF6yH8BSb/wgh2Dm5gqueZqYqo7pHusB8coWajbfZX2mq6DUHvMJ8niW54TANztlM2dsdjCyi6aWvRbyKbzcw8rHCvOzd98qn15hPrtBwkQ0avHXwq6QFjhCBzcmV3l2ikFPLI9xlVt37GXufXBGb7Vn5Fi9bYYUVVlgK7Bepk2Uzw68g3gAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Depeche Mode</div>
+            <div class="album">Violator</div>
+            <div class="year">1990</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACCUlEQVR4nO2a3a3CMAyFWxZLNouyWbIRGxSf46SFByruw8UuclXRED6pjmXHP+G2fXLdb8tHV2CBBRbYT2N95ZW73HmRe3metZXNNZYQSpo8a2nyMRQ4Z21lc411tasu6upraWlrqe2zxrL5x5IorA5Hnd767y/9BQxGhs/D0L7w0itjiRsZnDRTd2lr+6y1bI6xvgdOaq2Xml9mL7AECyxpbdY4rogNmXvdMet+CUYYNjSkbqWumn8gF5Fhj/ztDOuStmk0xQDZm3iqbnTNWjbHGLVUYVqiOyRv4qkFOhR9quLcL8EEg7bgnVBdh7ZkU9OSYaZx7pdggsG8oLM0QwNKBtidOrCpbM4xsTG4J2vTtWwMqhxEXHiP6Z7G8AkXFeUh8VV7izzkDMM2xpgAldUZTlMtYW9nWNf2EfUnyhLjg8LQGVkinr7HNGhqvlbHeLSSzGVzjTF5o69qQCj6UIszls01hs4H0o9hbTUPi0OMtZbNM8bWB+sDfstswT314C6wBANs9D4ax3ygD4eJ2fV1vwQTbJ5cJTpr3ruY+C3i6Qk2zY2HWI3mRo2hWM3GsrnGtM/G4yzsbZn1w4qyK+ztDxi8dXQv89deemEMjcvZsKxH9uZCNpeYRgKUpChR6Z76dCCbY2w/ueIZA2KBbngp/udwhh0nV7S4+X0enprKFlhggQXmAnsAcNxhM+1bSpwAAAAASUVORK5CYII=">
+          </div>
+          <div class="next">
+            <div class="artist">Dr. John</div>
+            <div class="album">Gris Gris</div>
+            <div class="year">1968</div>
+          </div>
+        </div>
+      
+        <div class="parcel">
+          <div class="qrcode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAACCElEQVR4nO2ZbY6DQAiGtRcbbjbxZsyN9gYuLzDqnzX9swUbbBN1+iQFwufMa3/n+nktb12FFVZYYV+NjVUv8mfSd7quplchBmsoJSw2o9HxIAt8rAbLlhob5ldNbEe2QOdqsGwPwAaJ5ZbR2a33kT/9BmysYrO+dYbrfepPH4w1T2TIa43bRvI9Vx+hQgQ2vHCKtQY+4m+X1VjZEmPNZjNu9tkQqHL31VjZcmNSB4b2bNK1aYyebVy4bHkxsdWijRuCdP6CJLfPviS9CiGYRad3cP6wWJLzsppehSAMHid5DR5nVVTTHHuBeIQKAZi3u2TuRni1eYHiZUuNYb7qc0CVcjojdbZvD1AhAkMBlbSG5sPzGurr9LpY2TJj4mMITnEz5DaZtXbWJAfrWYZLr0IIpi3HLmXBA1QNuWj46rz1ABViMNtuY9xHtzbOInUja0TyqxCBDR8UMCSo9XZ1NLVa9b1/Y01HUwSqJjVr5ghz6pwf0qsQgvkw6rHJjT1MbScuVrbMGAITux+ssepnDD42RMuWGTtPrtRO2pDYRD8buPQqxGDz5KpZilvUYDpEcNXTO2zM7V59oXOp6sI7mNRUsrEUJXZnN2QK2RJjxyaIZLjVK2n1b3eYnVw13XfzaevYBI6WLTF2OUmwvZBuYcrlb3fY9eTK3rxza7ODS69CYYUVVtj/Yr85b2MzYAUvhQAAAABJRU5ErkJggg==">
+          </div>
+          <div class="next">
+            <div class="artist">Frank Zappa</div>
+            <div class="album">Sheik Yerbouti</div>
+            <div class="year">1979</div>
+          </div>
+        </div>
+      
+    </div>
+  </body>
+</html>
